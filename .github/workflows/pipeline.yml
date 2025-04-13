@@ -34,4 +34,4 @@ jobs:
 
     - name: Build Frontend
       run: |
-        docker build -t test-frontend ./front-residencial
+        docker build -t test-frontend ./frontend/front-residencial
