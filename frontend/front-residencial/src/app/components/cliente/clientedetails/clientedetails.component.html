@@ -1,0 +1,72 @@
+<div class="container">
+    <div class="content">
+        <h2 class="titulo fw-bold mb-5">Cadastro de cliente</h2>
+        <form>
+            <div class="row mb-4">
+                <div class="form-group">
+                    <input type="text" id="nome" class="form-control" placeholder=" " [(ngModel)]="cliente.nome"
+                        name="nome" />
+                    <label for="nome">ㅤNome</label>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <input type="text" class="form-control" placeholder=" " [(ngModel)]="cliente.telefone"
+                            name="telefone" />
+                        <label for="telefone">Telefone</label>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <input type="text" class="form-control" placeholder=" " [(ngModel)]="cliente.email"
+                            name="email" />
+                        <label for="email">Email</label>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <input type="text" class="form-control" placeholder=" " [(ngModel)]="cliente.cpf" name="cpf" />
+                        <label for="cpf">CPF</label>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <input type="text" class="form-control" placeholder=" " [(ngModel)]="cliente.rg" name="rg" />
+                        <label for="rg">RG</label>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-6 mb-4">
+                    <div class="form-group">
+                        <input type="date" class="form-control" placeholder=" " [(ngModel)]="cliente.nascimento"
+                            name="nascimento" />
+                        <label for="nascimento">Data de Nascimento</label>
+                    </div>
+                </div>
+                <div class="col-md-6 mb-4">
+                    <div class="form-group">
+                        <input type="text" class="form-control" placeholder=" " [(ngModel)]="cliente.profissao"
+                            name="profissao" />
+                        <label for="profissao">Profissão</label>
+                    </div>
+                </div>
+            </div>
+            <br>
+            <button type="submit" class="btn btn-danger" routerLink="/admin/cliente">Voltar</button>
+            <button [disabled]="
+                            cliente.nome == null || 
+                            cliente.telefone == null || 
+                            cliente.email == null || 
+                            cliente.nascimento == null || 
+                            cliente.profissao == null || 
+                            cliente.rg == null || 
+                            cliente.cpf == null 
+                            " type="submit" class="btn btn-info" (click)="save()">Cadastrar</button>
+            <div class="text-center"></div>
+        </form>
+    </div>
+</div>

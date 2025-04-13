@@ -1,0 +1,102 @@
+
+
+.container {
+  margin-top: 0px;
+  padding-top: 0px;
+}
+
+.content {
+  padding-top: 0px;
+}
+
+.card {
+  --mdb-card-spacer-y: 0px;
+  border-radius: 15px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+  background-color: #f8f9fa;
+}
+
+.titulo {
+  padding-top: 10px;
+}
+
+.form-control {
+  border-radius: 20px;
+  padding: 10px 10px;
+  box-sizing: border-box;
+  width: 100%;
+}
+
+
+.form-check-input {
+  margin-right: 10px;
+}
+
+.btn {
+  border-radius: 10px;
+  padding: 12px;
+  font-weight: bold;
+  margin: 12px;
+}
+
+.btn-floating i {
+    line-height: 40px;
+}
+
+.btn-floating:hover {
+    background-color: rgba(0, 0, 0, 0.1);
+}
+
+.btn-primary {
+  background-color: #007bff;
+  color: white;
+}
+
+.btn-primary:hover {
+  background-color: #0056b3;
+  color: white;
+}
+
+.text-center {
+  margin-top: 20px;
+}
+
+p {
+  margin-bottom: 0;
+}
+
+.row {
+
+  margin-top: 20px;
+}
+
+.form-group {
+  position: relative;
+  margin-bottom: 1.5rem;
+}
+
+.form-control:focus + label,
+.form-control:not(:placeholder-shown) + label {
+  transform: translateY(-30px);
+  font-size: 12px;
+  color: #999;
+}
+
+label {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  transition: all 0.2s ease;
+  pointer-events: none;
+  font-size: 16px;
+  color: #999;
+}
+
+  
+.imagem {
+  top: 0;
+  right: -70px;
+  height: 100%;
+  width: auto;
+}
+  

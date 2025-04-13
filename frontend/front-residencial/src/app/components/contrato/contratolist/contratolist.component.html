@@ -1,0 +1,71 @@
+<div class="container">
+    <div class="row">
+        <div class="col-lg-12">
+            <div class="card">
+                <div class="card-body">
+                    <div class="cabeca">
+                        @if(arquivados){
+                            <div class="titulo">
+                                <h3>Listagem de contratos: <b style="color: rgb(167, 6, 6);">Inativos</b></h3>
+                            </div>
+                            <div class="direita">
+                                <button type="button" class="btn btn-select" data-mdb-ripple-init
+                                (click)="arquivados = false">Ativos</button>
+                            </div>
+                        }
+                        @else{
+                            <div class="titulo">
+                                <h3>Listagem de contratos: <b style="color: green;">Ativos</b></h3>
+                            </div>
+                            <div class="direita">
+                                <button type="button" class="btn btn-select" data-mdb-ripple-init
+                                (click)="arquivados = true">Inativos</button>
+                            </div>
+                        }
+                    </div>
+                    <table class="table table-striped">
+                        <thead>
+                            <tr>
+                                <th>identificador</th>
+                                <th>Nome do cliente</th>
+                                <th>Apartamento</th>
+                                <div class="direita">
+                                    <button type="button" class="btn btn-info" data-mdb-ripple-init
+                                        routerLink="/admin/contrato/new">Novo</button>
+                                </div>
+                            </tr>
+                        </thead>
+                        <tbody>
+
+                            @for (contrato of lista; track $index) {
+
+                                @if(contrato.status != arquivados){
+
+                            <tr>
+                                <td>{{contrato.identificador}}</td>
+                                <td>
+                                    <p>{{contrato.cliente.nome}}</p>
+                                </td>
+                                <td>
+                                    <p>{{contrato.ap.aparnum}}</p>
+                                </td>
+
+                                <td class="direita">
+                                    @if(!arquivados){
+
+                                    <button type="button" class="btn btn-danger" data-mdb-ripple-init
+                                        (click)="arquivar(contrato)">Arquivar</button>
+
+                                        }
+                                </td>
+                            </tr>
+                            }
+                        }
+
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

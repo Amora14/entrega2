@@ -1,0 +1,98 @@
+.content {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    background-color: #f5f7fa;
+    padding: 50px 300px;
+    border-radius: 30px;
+    min-height: calc(100vh - 40px);
+    text-align: center;
+    justify-content: center;
+}
+
+.form-control {
+    border-radius: 20px;
+    padding: 10px 10px;
+    box-sizing: border-box;
+    width: 100%;
+}
+
+.row {
+    position: relative;
+    margin-top: 20px;
+}
+
+.form-group {
+    position: relative;
+    margin-bottom: 1.5rem;
+}
+
+.form-control:focus+label,
+.form-control:not(:placeholder-shown)+label {
+    transform: translateY(-30px);
+    font-size: 12px;
+    color: #999;
+}
+
+label {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    transition: all 0.2s ease;
+    pointer-events: none;
+    font-size: 16px;
+    color: #999;
+}
+
+.btn {
+    padding: 0.7rem 1.5rem;
+    border: none;
+    border-radius: 10px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    overflow: hidden;
+    color: white;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    width: 100px;
+    margin: 0px 10px;
+  }
+  
+  .btn::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(rgba(255, 255, 255, 0.2), transparent);
+    transform: translateY(-100%);
+    transition: transform 0.3s ease;
+  }
+  
+  .btn:hover::after {
+    transform: translateY(0);
+  }
+  
+  .btn-info {
+    background: linear-gradient(135deg, #3498db, #2980b9);
+  }
+  
+  .btn-info:hover {
+    transform: translateY(-0.5px);
+    box-shadow: 0 8px 25px rgba(52, 152, 219, 0.4);
+  }
+  
+  .btn-danger {
+    background: linear-gradient(135deg, #e74c3c, #c0392b);
+  }
+  
+  .btn-danger:hover {
+    transform: translateY(-0.5px);
+    box-shadow: 0 8px 25px rgba(231, 76, 60, 0.4);
+  }

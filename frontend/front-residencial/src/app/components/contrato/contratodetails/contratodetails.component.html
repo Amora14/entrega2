@@ -1,0 +1,91 @@
+<div class="container">
+    <section class="text-center">
+        <div class="card">
+            <div class="card-body px-md-5">
+                <div class="row justify-content-center">
+                    <div class="col-lg-8">
+                        <h2 class="titulo fw-bold mb-5">Contratos</h2>
+                        <form>
+                            <div class="row">
+                                <img class="imagem position-absolute" src="https://cdn.discordapp.com/attachments/1007072574959783968/1255940268994199572/Agreement-rafiki_1.png?ex=667ef506&is=667da386&hm=0385c5e1f04fdb06e14dee9b0a1233c8162d6cf86fc01c222b58a9c6a4db040c&" alt="">
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                    <select name="seletor" class="form-control" placeholder=" " [(ngModel)]="contrato.ap.aparnum">
+                                        @for (ap of lista; track $index) {
+                                            @if (ap.status == 'Livre') {
+                                            <option value="{{ap.aparnum}}">{{ap.aparnum}}</option>
+                                            }
+                                        }
+                                    </select>
+                                    <label for="Condominio">Nº Apartamento</label>
+                                         </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <select name="seletor" class="form-control" [(ngModel)]="contrato.cliente">
+                                            @for (cliente of listac; track $index) {
+                                            <option [ngValue]="cliente">{{cliente.nome}}</option>
+                                            }
+                                        </select>
+                                        <label for="Condominio">Cliente</label>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <input type="text" class="form-control" placeholder=" " [(ngModel)]="contrato.identificador" name="identificador" id="identificador" readonly/>
+                                        <label for="identificador">Identificador</label>
+                                    </div>
+                                </div>
+                                <div class="col-md-6 ">
+                                    <div class="form-group">
+                                        <input type="date" class="form-control" placeholder=" " [(ngModel)]="contrato.entrada" name="entrada"/>
+                                        <label for="Condominio">Data de Entrada</label>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-6 ">
+                                    <div class="form-group">
+                                        <input type="number" class="form-control" placeholder=" " [(ngModel)]="contrato.valor_aluguel" name="Condominio" id="Condominio"/>
+                                        <label for="Condominio">Valor aluguel</label>
+                                    </div>
+                                </div>
+                                <div class="col-md-6 ">
+                                    <div class="form-group">
+                                        <input type="number" class="form-control" placeholder=" " [(ngModel)]="contrato.valor_iptu" name="Condominio" id="Condominio"/>
+                                        <label for="Condominio">Valor IPTU</label>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-6 ">
+                                    <div class="form-group">
+                                        <input type="number" class="form-control" placeholder=" " [(ngModel)]="contrato.valor_internet" name="Condominio" id="Condominio"/>
+                                        <label for="Condominio">Valor internet</label>
+                                    </div>
+                                </div>
+                                <div class="col-md-6 ">
+                                    <div class="form-group">
+                                        <input type="number" class="form-control" placeholder=" " [(ngModel)]="contrato.valor_condominio" name="Condominio" id="Condominio"/>
+                                        <label for="Condominio">Valor condominio</label>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label type="number" id="valorTotal_" name="Condominio" id="Condominio"><b>Valor Total:</b> {{+contrato.valor_condominio + +contrato.valor_aluguel + +contrato.valor_internet + +contrato.valor_iptu}}</label>
+                                </div>
+                            </div>
+                            
+                            <br>
+                            <button type="button" class="btn btn-info" routerLink="/admin/contrato" data-mdb-ripple-init>Voltar</button>
+                            <button type="button" class="btn btn-info" (click)="save()" [disabled]="!contrato.ap.aparnum || !contrato.valor_aluguel || !contrato.valor_internet || !contrato.valor_condominio">Salvar</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</div>

@@ -1,0 +1,35 @@
+.cabeca{
+    display: flex;
+    justify-content: space-between;
+}
+
+.direita{
+    padding: 10px;
+}
+
+.btn-select {
+
+    background-color: #007bff; /* Azul padrão */
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+/* Hover */
+.btn-select:hover {
+    background-color: #0056b3; /* Azul escuro no hover */
+}
+
+/* Botão selecionado */
+.btn-select.selected {
+    background-color: #003f7f; /* Azul ainda mais escuro quando selecionado */
+    color: white;
+}
+
+/* CSS adicional para ajuste dos botões */
+.btn-select + .btn-select {
+    margin-left: 10px;
+}
