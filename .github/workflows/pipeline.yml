@@ -1,0 +1,37 @@
+name: Docker Build Test
+
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    services:
+      mysql:
+        image: mysql:8
+        env:
+          MYSQL_ROOT_PASSWORD: root
+          MYSQL_DATABASE: integrador
+        ports:
+          - 3306:3306
+        options: >-
+          --health-cmd="mysqladmin ping --silent"
+          --health-interval=10s
+          --health-timeout=5s
+          --health-retries=3
+
+    steps:
+    - name: Checkout código
+      uses: actions/checkout@v3
+
+    - name: Build Backend
+      run: |
+        docker build -t test-backend ./Sistema-inte-main
+
+    - name: Build Frontend
+      run: |
+        docker build -t test-frontend ./front-residencial
