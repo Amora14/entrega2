@@ -30,7 +30,7 @@ jobs:
 
     - name: Build Backend
       run: |
-        docker build -t test-backend ./Sistema-inte-main
+        docker build -t test-backend ./backend/Sistema-inte-main
 
     - name: Build Frontend
       run: |
